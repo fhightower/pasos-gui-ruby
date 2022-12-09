@@ -1,0 +1,2 @@
+class Paso < ApplicationRecord
+end
