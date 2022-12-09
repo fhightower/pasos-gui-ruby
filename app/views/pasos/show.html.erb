@@ -1,5 +1,10 @@
 <h3><%= @paso.destination %>: <%= @paso.day %></h3>
 
-<p><%= link_to "Show all pasos", pasos_path %></p>
-<p><%= link_to "Edit paso", edit_paso_path(@paso) %></p>
-
+<ul>
+  <li><%= link_to "Show all", pasos_path %></li>
+  <li><%= link_to "Edit", edit_paso_path(@paso) %></li>
+  <li><%= link_to "Delete", paso_path(@paso), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    }%></li>
+</ul>

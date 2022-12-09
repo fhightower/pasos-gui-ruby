@@ -35,6 +35,13 @@ class PasosController < ApplicationController
     end
   end
 
+  def destroy
+    @paso = Paso.find(params[:id])
+    @paso.destroy
+
+    redirect_to pasos_path, status: :see_other
+  end
+
   private
 
   def paso_params
