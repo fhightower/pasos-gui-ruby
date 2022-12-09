@@ -4,11 +4,19 @@
   <div>
     <%= form.label :day %><br>
     <%= form.date_select :day %>
+    <% @paso.errors.full_messages_for(:day).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
 
+  <br/>
+
   <div>
-    <%= form.label :destination %><br>
+    <%= form.label :destination %><br/>
     <%= form.text_field :destination %>
+    <% @paso.errors.full_messages_for(:destination).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
 
   <div>
