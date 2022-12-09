@@ -1,9 +1,9 @@
 <h1>Pasos</h1>
 
 <ul>
-  <% @pasos.each do |pasos| %>
+  <% @pasos.each do |paso| %>
     <li>
-      <%= pasos.destination %>: <%= pasos.day %>
+      <%= link_to "#{paso.destination} #{paso.day}", paso %>
     </li>
   <% end %>
 </ul>
