@@ -21,6 +21,20 @@ class PasosController < ApplicationController
     end
   end
 
+  def edit
+    @paso = Paso.find(params[:id])
+  end
+
+  def update
+    @paso = Paso.find(params[:id])
+
+    if @paso.update(paso_params)
+      redirect_to @paso
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def paso_params
