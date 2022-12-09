@@ -1,5 +1,7 @@
 FROM ruby:2.7.6-buster
 
+RUN apt update && apt install -y sqlite3 libsqlite3-dev
+
 WORKDIR /code
 
 COPY ./Gemfile /code
