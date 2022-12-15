@@ -1,5 +1,10 @@
 <h1>Pasos</h1>
 
+<div data-controller="pasos">
+  <input type="text" placeholder="Search...">
+  <button data-action="click->pasos#search">Search</button>
+</div>
+
 <ul>
   <% @pasos.each do |paso| %>
     <li>
