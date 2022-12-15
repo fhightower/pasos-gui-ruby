@@ -1,6 +1,6 @@
 FROM ruby:2.7.6-buster
 
-RUN apt update && apt install -y sqlite3 libsqlite3-dev
+RUN apt update && apt install -y sqlite3 libsqlite3-dev nodejs npm
 
 WORKDIR /code
 
@@ -12,4 +12,5 @@ COPY ./ /code/
 
 RUN bundle config set force_ruby_platform true
 RUN /code/bin/setup
+RUN npm ci
 
