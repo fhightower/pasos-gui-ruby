@@ -1,17 +1,17 @@
 <h1>Pasos</h1>
 
 <div data-controller="pasos">
-  <input type="text" placeholder="Search...">
+  <input data-pasos-target="query" type="text" placeholder="Search...">
   <button data-action="click->pasos#search">Search</button>
-</div>
 
-<ul>
-  <% @pasos.each do |paso| %>
-    <li>
-      <%= link_to "#{paso.destination} #{paso.day}", paso %>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @pasos.each do |paso| %>
+      <li data-pasos-target="paso">
+        <%= link_to "#{paso.destination} #{paso.day}", paso %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
 <%= link_to "Create paso", new_paso_path %>
 
